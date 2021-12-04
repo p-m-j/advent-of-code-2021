@@ -1,5 +1,7 @@
 <Query Kind="Program" />
 
+#load ".\AdventOfCode"
+
 void Main()
 {
     var lines = AdventOfCode.GetLines("day_3.input");

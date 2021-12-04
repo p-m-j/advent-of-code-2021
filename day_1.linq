@@ -1,5 +1,7 @@
 <Query Kind="Program" />
 
+#load ".\AdventOfCode"
+
 void Main()
 {
     using (var reader = AdventOfCode.GetReader("day_1.input"))
