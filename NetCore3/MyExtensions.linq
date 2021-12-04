@@ -9,20 +9,20 @@ public static class AdventOfCode
 	public static IEnumerable<string> GetLines(string filename)
 	{
 		var root = Path.GetDirectoryName(Util.CurrentQueryPath);
-		var input = Path.Combine(root, filename);
+		var input = Path.Combine(root, "inputs", filename);
 		return File.ReadAllLines(input);
 	}
 
 	public static StreamReader GetReader(string filename)
 	{
 		var root = Path.GetDirectoryName(Util.CurrentQueryPath);
-		var input = Path.Combine(root, filename);
+		var input = Path.Combine(root, "inputs", filename);
 		return new StreamReader(File.Open(input, FileMode.Open));
 	}
 
 	public static string MapPath(string filename)
 	{
 		var root = Path.GetDirectoryName(Util.CurrentQueryPath);
-		return Path.Combine(root, filename);
+		return Path.Combine(root, "inputs", filename);
 	}
 }
