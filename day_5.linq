@@ -10,9 +10,6 @@ void Main()
         .Select(x => new Line(x))
         .ToArray();
 
-    var sizeX = lines.Max(x => x.X2) + 1;
-    var sizeY = lines.Max(x => x.Y2) + 1;
-
     GetScore(lines, considderDiagonals:false).Dump("Part One");
     GetScore(lines, considderDiagonals:true).Dump("Part Two");
 }
