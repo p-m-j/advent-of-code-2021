@@ -23,7 +23,7 @@ private int GetScorePartOne(Line[] lines)
 
     foreach (var line in lines)
     {
-        foreach (var point in line.GetAllPoints())
+        foreach (var point in line.GetAllPoints(considderDiagonals: false))
         {
             if (!floorMap.ContainsKey(point))
             {
@@ -97,8 +97,8 @@ public class Line
         }
 
         return considderDiagonals
-        ? GetDiagonalPoints()
-        : Enumerable.Empty<(int, int)>();
+            ? GetDiagonalPoints()
+            : Enumerable.Empty<(int, int)>();
     }
 
     private IEnumerable<(int, int)> GetHoriztonalPoints()
