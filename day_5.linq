@@ -13,38 +13,17 @@ void Main()
     var sizeX = lines.Max(x => x.X2) + 1;
     var sizeY = lines.Max(x => x.Y2) + 1;
 
-    GetScorePartOne(lines).Dump("Part One");
-    GetScorePartTwo(lines).Dump("Part Two");
+    GetScore(lines, considderDiagonals:false).Dump("Part One");
+    GetScore(lines, considderDiagonals:true).Dump("Part Two");
 }
 
-private int GetScorePartOne(Line[] lines)
+private int GetScore(Line[] lines, bool considderDiagonals)
 {
     var floorMap = new Dictionary<(int, int), int>();
 
     foreach (var line in lines)
     {
-        foreach (var point in line.GetAllPoints(considderDiagonals: false))
-        {
-            if (!floorMap.ContainsKey(point))
-            {
-                floorMap[point] = 1;
-                continue;
-            }
-
-            floorMap[point] += 1;
-        }
-    }
-
-    return floorMap.Values.Count(x => x > 1);
-}
-
-private int GetScorePartTwo(Line[] lines)
-{
-    var floorMap = new Dictionary<(int, int), int>();
-
-    foreach (var line in lines)
-    {
-        foreach (var point in line.GetAllPoints(considderDiagonals: true))
+        foreach (var point in line.GetAllPoints(considderDiagonals))
         {
             if (!floorMap.ContainsKey(point))
             {
