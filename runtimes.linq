@@ -14,6 +14,7 @@ void Main()
     table.AddRow(day++, false.ToEmoji(), "0.007 seconds");
     table.AddRow(day++, true.ToEmoji(), "0.033 seconds");
     table.AddRow(day++, true.ToEmoji(), "0.046 seconds");
+    table.AddRow(day++, true.ToEmoji(), "0.001 seconds");
     table.ToMarkDownString().Dump();
 }
 

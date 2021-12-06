@@ -19,4 +19,5 @@ Results
 | 3   | :x:                | 0.007 seconds |
 | 4   | :heavy_check_mark: | 0.033 seconds |
 | 5   | :heavy_check_mark: | 0.046 seconds |
+| 6   | :heavy_check_mark: | 0.001 seconds |
 
