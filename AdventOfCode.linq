@@ -9,6 +9,14 @@ public static class AdventOfCode
         return File.ReadAllLines(input);
     }
 
+    public static string ReadAll(string filename, bool demo)
+    {
+        var extension = demo ? "demo" : "input";
+        var root = Path.GetDirectoryName(Util.CurrentQueryPath);
+        var input = Path.Combine(root, "inputs", $"{filename}.{extension}");
+        return File.ReadAllText(input);
+    }
+
     public static StreamReader GetReader(string filename)
     {
         var root = Path.GetDirectoryName(Util.CurrentQueryPath);

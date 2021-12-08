@@ -16,6 +16,7 @@ void Main()
     table.AddRow(day++, true.ToEmoji(), "0.046 seconds", "First attempt took ~8 seconds to run for part 1");
     table.AddRow(day++, true.ToEmoji(), "0.001 seconds", "First attempt out of memory part 2, also very long runtime");
     table.AddRow(day++, true.ToEmoji(), "0.18 seconds", "Pretty good first try, could probably cleanup but I'm happy.");
+    table.AddRow(day++, true.ToEmoji(), "0.006 seconds", "That was a right PITA");
     table.ToMarkDownString().Dump();
 }
 
