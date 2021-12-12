@@ -13,6 +13,12 @@ public static class AdventOfCode
         return File.ReadAllLines(input);
     }
 
+    public static IEnumerable<string> GetLines(string filename, bool demo)
+    {
+        var path = MapPath(filename, demo);
+        return File.ReadAllLines(path);
+    }
+
     public static string ReadAll(string filename, bool demo)
     {
         var extension = demo ? "demo" : "input";
@@ -28,10 +34,12 @@ public static class AdventOfCode
         return new StreamReader(File.Open(input, FileMode.Open));
     }
 
-    public static string MapPath(string filename)
+    public static string MapPath(string filename, bool demo)
     {
         var root = Path.GetDirectoryName(Util.CurrentQueryPath);
-        return Path.Combine(root, "inputs", filename);
+        var extension = demo ? "demo" : "input";
+        var file = $"{filename}.{extension}";
+        return Path.Combine(root, "inputs", file);
     }
 
     public static string ToEmoji(this bool input)
