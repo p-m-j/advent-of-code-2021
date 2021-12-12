@@ -19,6 +19,7 @@ void Main()
     table.AddRow(day++, true.ToEmoji(), "0.006 seconds", "That was a right PITA");
     table.AddRow(day++, true.ToEmoji(), "0.010 seconds", "Rushed catching up, probably much better ways to solve.");
     table.AddRow(day++, true.ToEmoji(), "0.001 seconds", "Sounded more fun than it was.");
+    table.AddRow(day++, true.ToEmoji(), "0.035 seconds", "Rushed catching up, probably much better ways to solve.");
     table.ToMarkDownString().Dump();
 }
 

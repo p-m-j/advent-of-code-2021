@@ -24,3 +24,4 @@ a little about optimizing for runtime.
 | 8   | :heavy_check_mark:  | 0.006 seconds | That was a right PITA                                        |
 | 9   | :heavy_check_mark:  | 0.010 seconds | Rushed catching up, probably much better ways to solve.      |
 | 10  | :heavy_check_mark:  | 0.001 seconds | Sounded more fun than it was.                                |
+| 11  | :heavy_check_mark:  | 0.035 seconds | Rushed catching up, probably much better ways to solve.      |
