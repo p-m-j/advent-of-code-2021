@@ -22,3 +22,5 @@ Results
 | 6   | :heavy_check_mark:  | 0.001 seconds | First attempt out of memory part 2, also very long runtime   |
 | 7   | :heavy_check_mark:  | 0.18 seconds  | Pretty good first try, could probably cleanup but I'm happy. |
 | 8   | :heavy_check_mark:  | 0.006 seconds | That was a right PITA                                        |
+| 9   | :x:                 | N/A           | Skipped for now                                              |
+| 10  | :heavy_check_mark:  | 0.001 seconds | Sounded more fun than it was.                                |
