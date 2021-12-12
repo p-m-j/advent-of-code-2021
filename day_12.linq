@@ -14,7 +14,7 @@ void Main()
         cs.PopulatePaths(cs.Edges, "start", paths, 1);
         paths.Count.Dump("Part One");
     }
-    
+
     {
         HashSet<string> paths = new();
         cs.PopulatePaths(cs.Edges, "start", paths, 2);
@@ -34,10 +34,11 @@ public class CaveSystem
             var pair = line.Split('-');
             Connect(pair[0], pair[1]);
         }
-        foreach(var key in Edges.Keys)
+        foreach (var key in Edges.Keys)
         {
             Edges[key].Remove("start");
         }
+        Edges["end"].Clear();
     }
 
     private void Connect(string a, string b)
@@ -45,12 +46,10 @@ public class CaveSystem
         Edges[a].Add(b);
         Edges[b].Add(a);
     }
-    
-    private HashSet<string> AlreadyTried = new();
 
     public void PopulatePaths(Dictionary<string, HashSet<string>> caves, string start, HashSet<string> paths, int maxSmallVisits, string currentPath = "start")
     {
-        if(!ValidateHistory(currentPath, maxSmallVisits))
+        if (!ValidateHistory(currentPath, maxSmallVisits))
         {
             return;
         }
@@ -65,14 +64,14 @@ public class CaveSystem
             paths.Add(currentPath);
         }
     }
-    
+
     public static bool ValidateHistory(string a, int maxSmallVisits)
     {
         var history = a.Split(',')
             .GroupBy(x => x)
-            .Select(x => new { x.Key, Count = x.Count()})
+            .Select(x => new { x.Key, Count = x.Count() })
             .Where(x => x.Key.ToUpper() != x.Key)
-            .ToList();        
+            .ToList();
 
         if (history.Any(x => x.Key == "start" && x.Count > 1))
         {
@@ -86,7 +85,7 @@ public class CaveSystem
         {
             return false;
         }
-        if(history.Any(x => x.Count > maxSmallVisits))
+        if (history.Any(x => x.Count > maxSmallVisits))
         {
             return false;
         }
@@ -103,7 +102,7 @@ public class CaveSystem
 [InlineData("start,A,c,A,c,b", true)]
 void ValidateHistory_Works(string history, bool expected)
 {
-   Assert.Equal(expected, CaveSystem.ValidateHistory(history, 2));
+    Assert.Equal(expected, CaveSystem.ValidateHistory(history, 2));
 }
 
 
