@@ -16,21 +16,21 @@ void Main()
 public void PrintCode(Sheet sheet)
 {
     "!".Dump("Part Two");
-    
+
     var set = sheet.Points;
     foreach (var fold in sheet.Folds)
     {
         set = Sheet.FoldAround(set, fold);
     }
 
-    var width = set.Max(x => x.X + 1);
-    var height = set.Max(x => x.Y + 1);
+    var width = set.Max(x => x.X) + 1;
+    var height = set.Max(x => x.Y) + 1;
 
     for (var y = 0; y < height; y++)
     {
         for (var x = 0; x < width; x++)
         {
-            Console.Write(set.Contains(new Point(x, y)) ? "#" : ".");
+            Console.Write(set.Contains(new Point(x, y)) ? "#" : " ");
         }
         Console.WriteLine();
     }
