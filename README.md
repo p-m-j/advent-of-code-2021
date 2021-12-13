@@ -26,3 +26,14 @@ a little about optimizing for runtime.
 | 10  | :heavy_check_mark:  | 0.001 seconds | Sounded more fun than it was.                                |
 | 11  | :heavy_check_mark:  | 0.035 seconds | Rushed catching up, probably much better ways to solve.      |
 | 12  | :heavy_check_mark:  | ~6.5 seconds  | Didn't enjoy this one.                                       |
+| 13  | :heavy_check_mark:  | 0.001 seconds | Day 13 was really good fun!!!                                |
+
+### Day 13 plotted.
+```
+#..#..##..#....####.###...##..####.#..#
+#..#.#..#.#.......#.#..#.#..#....#.#..#
+#..#.#....#......#..#..#.#..#...#..#..#
+#..#.#....#.....#...###..####..#...#..#
+#..#.#..#.#....#....#.#..#..#.#....#..#
+.##...##..####.####.#..#.#..#.####..##.
+```
