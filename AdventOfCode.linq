@@ -19,6 +19,11 @@ public static class AdventOfCode
         return File.ReadAllLines(path);
     }
 
+    public static IEnumerable<string> GetLines(int day, bool demo)
+    {
+        return GetLines($"day_{day}", demo);
+    }
+
     public static string ReadAll(string filename, bool demo)
     {
         var extension = demo ? "demo" : "input";
