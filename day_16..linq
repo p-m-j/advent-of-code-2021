@@ -16,10 +16,7 @@ void Main()
     var packet = new BitsPacketFactory(input.ToBitsString()).GetNext();
     packet.SumVersions().Dump("Part One");
     packet.GetValue().Dump("Part Two");
-
 }
-
-
 
 public static class Helpers
 {
@@ -65,12 +62,12 @@ public class BitsPacketFactory
 
     private LiteralValue GetLiteral(int version, int typeId, bool trimPadding)
     {
-        int value = 0;
+        long value = 0;
         var read = 6;
 
         while (true)
         {
-            var temp = GetNextBits(5);
+            long temp = GetNextBits(5);
             read += 5;
             value = value << 4;
             value |= temp & 0b01111;
@@ -166,7 +163,7 @@ public abstract class BitsPacket
 
 public class LiteralValue : BitsPacket
 {
-    public int Value { get; set; }
+    public long Value { get; set; }
 
     public override long GetValue()
     {
@@ -193,7 +190,7 @@ public class Operator : BitsPacket
             case 5:
                 return SubPackets.First().GetValue() > SubPackets.Last().GetValue() ? 1 : 0;
             case 6:
-                return SubPackets.First().GetValue() > SubPackets.Last().GetValue() ? 0 : 1;
+                return SubPackets.First().GetValue() < SubPackets.Last().GetValue() ? 1 : 0;
             case 7:
                 return SubPackets.First().GetValue() == SubPackets.Last().GetValue() ? 1 : 0;
         }
