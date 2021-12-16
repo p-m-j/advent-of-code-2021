@@ -32,6 +32,11 @@ public static class AdventOfCode
         return File.ReadAllText(input);
     }
 
+    public static string ReadAll(int day, bool demo)
+    {
+        return ReadAll($"day_{day}", demo);
+    }
+
     public static StreamReader GetReader(string filename)
     {
         var root = Path.GetDirectoryName(Util.CurrentQueryPath);
